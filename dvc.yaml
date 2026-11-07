@@ -22,15 +22,38 @@ stages:
     - data/split
 
   train:
-    # TODO: o comando que roda o treino
     cmd: python src/train.py
     deps:
-    # TODO: o script, o bike.py e o arquivo de TREINO que o split gera
-    - data/split/train.csv
     - src/train.py
     - src/bike.py
+    - data/split/train.csv
     params:
-    # TODO: as duas seções do params.yaml que o treino lê
     - train
+    - mlflow
     outs:
     - models
+
+  evaluate:
+    # TODO: o comando que roda a avaliação
+    cmd: python src/evaluate.py
+    deps:
+    # TODO: o script, o bike.py, o modelo (pasta models) e o arquivo de TESTE
+    - src/evaluate.py
+    - src/bike.py
+    - models/model.joblib
+    - data/split/test.csv
+    metrics:
+    - metrics.json:
+        cache: false
+
+  plot:
+    # TODO: o comando que gera o gráfico
+    cmd: python src/plot.py
+    deps:
+    # TODO: o script, o modelo e o arquivo de teste
+    - src/plot.py
+    - models/model.joblib
+    - data/split/test.csv
+    plots:
+    - reports/previsto_vs_real.png:
+        cache: false
