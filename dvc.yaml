@@ -40,8 +40,8 @@ stages:
     # TODO: o script, o bike.py, o modelo (pasta models) e o arquivo de TESTE
     - src/evaluate.py
     - src/bike.py
-    - models/model.joblib
     - data/split/test.csv
+    - models
     metrics:
     - metrics.json:
         cache: false
@@ -52,8 +52,9 @@ stages:
     deps:
     # TODO: o script, o modelo e o arquivo de teste
     - src/plot.py
-    - models/model.joblib
+    - src/bike.py
     - data/split/test.csv
+    - models/model.joblib
     plots:
     - reports/previsto_vs_real.png:
         cache: false
