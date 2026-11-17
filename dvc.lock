@@ -86,7 +86,7 @@ stages:
       size: 36709
     - path: models
       hash: md5
-      md5: 7297691490b38f63b5514cb20763a8d1.dir
+      md5: 7fb49810c372433d16645d6c4872c6da.dir
       size: 548713
       nfiles: 2
     - path: src/bike.py
@@ -109,14 +109,11 @@ stages:
       hash: md5
       md5: 61194dbf3e988fed8cb6219dc7756c04
       size: 36709
-    - path: models/model.joblib
+    - path: models
       hash: md5
-      md5: 0e7b1be889cda223e0cbc6e1a0124983
-      size: 548608
-    - path: src/bike.py
-      hash: md5
-      md5: c2d8efdd8a57a65e92810794ba981855
-      size: 1911
+      md5: 7fb49810c372433d16645d6c4872c6da.dir
+      size: 548713
+      nfiles: 2
     - path: src/plot.py
       hash: md5
       md5: 687a520f301d4c62b7557831af2c1d03
